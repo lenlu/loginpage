@@ -5,40 +5,45 @@
   <title>Registration Form</title>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style1.css">
 </head>
 <body>
-  <div class="wrapper">
-    <div class="registration_box">
-      <div class="registration-header"><span>Register</span></div>
-      <h1 class="registration-title neon-title">Create Account</h1>
-      <div class="input_box">
-        <input type="text" id="new_user" class="input-field" required>
-        <label for="new_user" class="label">Name</label>
-        <i class="bx bx-user icon"></i>
-      </div>
-      <div class="input_box">
-        <input type="text" id="new_email" class="input-field" required>
-        <label for="new_email" class="label">Email/phone number</label>
-        <i class="bx bx-user icon"></i>
-      </div>
-      <div class="input_box">
-        <input type="password" id="new_pass" class="input-field" required>
-        <label for="new_pass" class="label">Password</label>
-        <i class="bx bx-lock-alt icon"></i>
-      </div>
-      <div class="input_box">
-        <input type="password" id="confirm_pass" class="input-field" required>
-        <label for="confirm_pass" class="label">Confirm Password</label>
-        <i class="bx bx-lock-alt icon"></i>
-      </div>
-      <div class="input_box">
-        <input type="submit" class="input-submit" value="Register">
-      </div>
-      <div class="login-link">
-        <span>Already have an account? <a href="index.html">Login</a></span>
+  <!-- Formspree form: replace YOUR_FORM_ID with your actual Formspree form ID -->
+  <form action="http://localhost:3000/register" method="POST">
+    <input type="hidden" name="_subject" value="New registration details">
+    <input type="hidden" name="_captcha" value="false">
+    <div class="wrapper">
+      <div class="registration_box">
+        <div class="registration-title neon-title"><span>Register</span></div>
+        <h1 class="registration-title neon-title">Create Account</h1>
+        <div class="input_box">
+          <input type="text" name="name" id="new_user" class="input-field" required>
+          <label for="new_user" class="label">Name</label>
+          <i class="bx bx-user icon"></i>
+        </div>
+        <div class="input_box">
+          <input type="text" name="email" id="new_email" class="input-field" required>
+          <label for="new_email" class="label">Email/phone number</label>
+          <i class="bx bx-user icon"></i>
+        </div>
+        <div class="input_box">
+          <input type="password" name="password" id="new_pass" class="input-field" required>
+          <label for="new_pass" class="label">Password</label>
+          <i class="bx bx-lock-alt icon"></i>
+        </div>
+        <div class="input_box">
+          <input type="password" id="confirm_pass" class="input-field" required>
+          <label for="confirm_pass" class="label">Confirm Password</label>
+          <i class="bx bx-lock-alt icon"></i>
+        </div>
+        <div class="input_box">
+          <input type="submit" class="input-submit" value="Register">
+        </div>
+        <div class="login-link">
+          <span>Already have an account? <a href="index.html">Login</a></span>
+        </div>
       </div>
     </div>
-  </div>
+  </form>
 </body>
 </html>

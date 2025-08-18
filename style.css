@@ -1,279 +1,96 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
-
-:root {
-  --primary-color: #00ffd0;
-  --accent-color: #ff2e63;
-  --bg-dark: #23242a;
-  --bg-glass: rgba(35,36,42,0.85);
-  --text-light: #fff;
-  --text-dark: #23242a;
-  --shadow-neon: 0 0 8px 1px #00ffd0, 0 0 16px 2px #ff2e63;
-}
-
+html,
 body {
-  background: url('4K-Space.jpg') center center/cover no-repeat fixed;
-  min-height: 100vh;
-  position: relative;
-  overflow: hidden;
-}
-
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0; right: 0; bottom: 0;
-  z-index: -2;
-  pointer-events: none;
-  background: radial-gradient(circle at 60% 40%, rgba(255,46,99,0.12) 0%, rgba(0,255,208,0.08) 60%, transparent 100%);
-}
-
-.wrapper {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, rgba(0,255,208,0.06) 0%, rgba(255,46,99,0.06) 100%);
-  position: relative;
-  z-index: 1;
-}
-
-.login_box {
-  position: relative;
-  width: 400px;
-  background: var(--bg-glass);
-  border: 6px solid transparent;
-  border-radius: 0px;
-  padding: 6em 2em 3em 2em;
-  color: var(--text-light);
-  box-shadow: 0 0 32px 8px #00ffd0, 0 0 48px 12px #ff2e63;
-  transition: box-shadow 0.3s, border-color 0.3s;
-  border-image: linear-gradient(270deg, #ff2e63, #00ffd0, #fffb00, #ff2e63) 1;
-  animation: rgb-border 2s linear infinite;
-}
-
-@keyframes rgb-border {
-  0% {
-    border-image: linear-gradient(270deg, #ff2e63, #00ffd0, #fffb00, #ff2e63) 1;
-  }
-  50% {
-    border-image: linear-gradient(90deg, #00ffd0, #fffb00, #ff2e63, #00ffd0) 1;
-  }
-  100% {
-    border-image: linear-gradient(270deg, #ff2e63, #00ffd0, #fffb00, #ff2e63) 1;
-  }
-}
-
-.login-header {
-  position: absolute;
-  top: -55px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(90deg, var(--primary-color) 60%, var(--accent-color) 100%);
-  width: 180px;
-  height: 70px;
-  border-radius: 35px 35px 0 0;
-  box-shadow: 0 0 8px 1px var(--primary-color), 0 0 16px 2px var(--accent-color);
-  animation: headerPop 1s cubic-bezier(.68,-0.55,.27,1.55);
-}
-
-@keyframes headerPop {
-  0% { transform: translateX(-50%) scale(0.7); opacity: 0; }
-  100% { transform: translateX(-50%) scale(1); opacity: 1; }
-}
-
-.login-header span {
-  font-size: 34px;
-  font-weight: bold;
-  color: var(--text-dark);
-  letter-spacing: 3px;
-  text-shadow: 0 0 4px var(--primary-color), 0 0 8px var(--accent-color);
-}
-
-.input_box {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  margin: 30px 0;
-}
-
-.input-field {
-  width: 100%;
-  height: 56px;
-  font-size: 18px;
-  background: rgba(35,36,42,0.7);
-  color: var(--text-light);
-  padding-inline: 22px 52px;
-  border: 2px solid var(--primary-color);
-  border-radius: 32px 8px 32px 8px;
-  outline: none;
-  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
-  box-shadow: 0 0 6px 1px var(--primary-color);
-}
-
-.input-field:focus {
-  border-color: var(--accent-color);
-  background: rgba(255,46,99,0.12);
-  box-shadow: 0 0 8px 2px var(--accent-color);
-}
-
-.label {
-  position: absolute;
-  top: 16px;
-  left: 22px;
-  transition: 0.2s;
-  pointer-events: none;
-  color: #aaa;
-  font-weight: 500;
-}
-
-.input-field:focus ~ .label,
-.input-field:valid ~ .label {
-  top: -12px;
-  left: 22px;
-  font-size: 15px;
-  background: var(--primary-color);
-  border-radius: 32px;
-  color: var(--text-dark);
-  padding: 0 12px;
-  box-shadow: 0 0 4px var(--accent-color);
-}
-
-.icon {
-  position: absolute;
-  top: 20px;
-  right: 28px;
-  font-size: 22px;
-  color: var(--accent-color);
-  transition: color 0.3s, text-shadow 0.3s;
-  text-shadow: 0 0 4px var(--primary-color);
-}
-
-.input-field:focus ~ .icon {
-  color: var(--primary-color);
-  text-shadow: 0 0 8px var(--accent-color);
-}
-
-.remember-forgot {
-  display: flex;
-  justify-content: space-between;
+  height: 100%;
+  margin: 0;
   font-size: 16px;
-  margin-bottom: 12px;
-  color: var(--text-light);
-  text-shadow: 0 0 2px var(--primary-color);
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  line-height: 1.8em;
+  color: #000000;
 }
-
-.input-submit {
-  width: 100%;
-  height: 54px;
-  background: linear-gradient(90deg, var(--primary-color) 0%, var(--accent-color) 100%);
-  font-size: 19px;
-  font-weight: 700;
-  border: none;
-  border-radius: 32px 8px 32px 8px;
-  cursor: pointer;
-  transition: box-shadow 0.3s, background 0.3s, color 0.3s;
-  box-shadow: 0 0 8px 1px var(--primary-color), 0 0 16px 2px var(--accent-color);
-  color: var(--text-dark);
-  letter-spacing: 1px;
+.img1{
+    background-image: url(image1.png);
+    min-height: 100%;
 }
-
-.input-submit:hover {
-  background: linear-gradient(90deg, var(--accent-color) 0%, var(--primary-color) 100%);
-  box-shadow: 0 0 16px 4px var(--accent-color), 0 0 32px 8px var(--primary-color);
-  color: var(--text-light);
+.img2{
+    background-image: url(image2.png);
+    min-height: 100%;
 }
-
-.register {
-  text-align: center;
-  margin-top: 22px;
+.img3{
+    background-image: url(image3.png);
+    min-height: 100%;
 }
-
-.register a {
-  font-weight: 700;
-  color: var(--primary-color);
-  transition: color 0.3s, text-shadow 0.3s;
-  text-shadow: 0 0 4px var(--accent-color);
+.img4{
+    background-image: url(IMAGE4.png);
+    min-height: 100%;
 }
-
-.register a:hover {
-  color: var(--accent-color);
-  text-shadow: 0 0 8px var(--primary-color);
+.img5{
+    background-image: url(image5.png);
+    min-height: 100%;
 }
-
-.insta-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1.3em;
-  font-weight: 600;
-  color: #ff2e63;
-  background: linear-gradient(90deg, #ff2e63 0%, #00ffd0 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 8px #ff2e63, 0 0 16px #00ffd0;
-  transition: text-shadow 0.3s, transform 0.3s;
-  text-decoration: none;
+.img6{
+    background-image: url(image6.png);
+    min-height: 100%;
 }
-
-.insta-link:hover {
-  text-shadow: 0 0 16px #ff2e63, 0 0 32px #00ffd0;
-  transform: scale(1.08) rotate(-2deg);
+.img7{
+    background-image: url(image7.png);
+    min-height: 100%;
 }
-
-.insta-link .bx {
-  font-size: 1.6em;
-  vertical-align: middle;
-  margin-right: 4px;
-  color: #ff2e63;
-  filter: drop-shadow(0 0 8px #ff2e63) drop-shadow(0 0 16px #00ffd0);
-  animation: insta-glow 1.2s infinite alternate;
+.img8{
+    background-image: url(image8.png);
+    min-height: 100%;
 }
-
-@keyframes insta-glow {
-  0% {
-    filter: drop-shadow(0 0 8px #ff2e63) drop-shadow(0 0 16px #00ffd0);
-  }
-  100% {
-    filter: drop-shadow(0 0 16px #ff2e63) drop-shadow(0 0 32px #00ffd0);
-  }
+.img9{
+    background-image: url(image9.png);
+    min-height: 100%;
 }
-
-.neon-title {
-  font-size: 2em;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  text-align: center;
-  margin: 0.5em 0 0.2em 0;
-  background: linear-gradient(90deg, #ff2e63 0%, #00ffd0 100%);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  text-shadow: 0 0 12px #ff2e63, 0 0 24px #00ffd0;
-  animation: neon-flicker 1.5s infinite alternate;
+.img10{
+    background-image: url(image10.png);
+    min-height: 100%;
 }
-
-@keyframes neon-flicker {
-  0% { text-shadow: 0 0 12px #ff2e63, 0 0 24px #00ffd0; }
-  100% { text-shadow: 0 0 24px #ff2e63, 0 0 48px #00ffd0; }
+.img11{
+    background-image: url(image11.png);
+    min-height: 100%;
 }
-
-@media only screen and (max-width: 564px) {
-  .wrapper {
-    padding: 20px;
-  }
-  .login_box {
-    padding: 6em 1em 3em 1em;
+.img12{
+    background-image: url(image12.png);
+    min-height: 100%;
+}
+.img13{
+    background-image: url(image13.png);
+    min-height: 100%;
+}
+.img1 , .img2 , .img3 , .img4 , .img5 , .img6 , .img7 , .img8 , .img9 , .img10 , .img11 , .img12 , .img13{
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+.text{
+    position: absolute;
+    top: 50%;
+    text-align: center;
     width: 100%;
-    min-width: 0;
-  }
+    font-size: 30px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+}
+.Background-text{
+    background: #000000;
+    color: #fff;
+    padding: 20px;
+}
+.section{
+  
+    padding: 60px 80px;
+    text-align: center;
+}
+.section-light{
+    background-color: #bd5f40;
+    color: #ffffff;
+}
+.section-dark{
+    background-color: #000000;
+    color: #ffffff;
 }

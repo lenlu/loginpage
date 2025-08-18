@@ -5,7 +5,7 @@
   <title>Login Form</title>
   <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins&display=swap">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./style1.css">
 </head>
 <body>
   <div class="wrapper">
@@ -29,6 +29,17 @@
       </div>
       <div class="input_box">
         <input type="submit" class="input-submit" value="Login">
+      <script>
+      document.querySelector('.input-submit').addEventListener('click', function() {
+      var user = document.getElementById('user').value;
+      var pass = document.getElementById('pass').value;
+      if (user === 'lenlumember' && pass === 'imember') {
+      window.location.href = 'index 1.html';
+      } else {
+      alert('Invalid credentials, please try again.');
+      }
+      });
+      </script>
       </div>
       <div class="register">
         <span>Don't have an account? <a href="register.html">Register</a></span>
